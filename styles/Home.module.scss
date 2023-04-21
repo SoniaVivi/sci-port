@@ -1,0 +1,15 @@
+.heading {
+  font-family: "Orbitron Bold";
+}
+
+.para {
+  font-family: "Titillium Bold";
+}
+
+.container {
+  height: 200px;
+  max-width: calc(100% - 25px);
+  width: 960px;
+  margin: 25px auto;
+  border: 1px solid var(--secondary-color);
+}

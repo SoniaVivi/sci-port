@@ -1,0 +1,156 @@
+.navbar {
+  align-self: flex-start;
+  position: sticky;
+  z-index: 2;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  height: var(--navbar-height);
+  font-size: var(--navbar-text-size);
+  background-color: var(--nav-bg);
+  transition: height 0.3s ease-in, box-shadow 0.3s ease-out;
+
+  &.scrolled {
+    height: 75px;
+    box-shadow: 0 5px 3px rgba(0, 0, 0, 0.05);
+  }
+}
+
+.expandedList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: 100%;
+  min-height: 100%;
+}
+
+.navLink {
+  --duration: 0.2s;
+  overflow: hidden;
+  position: relative;
+  margin-right: 15px;
+  padding: 10px;
+  border: 3px solid transparent;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: 4;
+    display: block;
+    width: 0;
+    height: 0;
+  }
+
+  &::before {
+    bottom: 0;
+    left: 100%;
+    border-bottom: 3px solid transparent;
+    border-left: 3px solid transparent;
+  }
+
+  &::after {
+    top: 0;
+    right: 100%;
+    border-top: 3px solid transparent;
+    border-right: 3px solid transparent;
+  }
+
+  &:hover::before,
+  &:hover::after {
+    width: 100%;
+    border-color: var(--secondary-color);
+  }
+
+  &:hover::before {
+    left: 0;
+    height: 100%;
+    transition: left var(--duration) linear,
+      height var(--duration) linear var(--duration);
+  }
+
+  &:hover::after {
+    right: 0;
+    height: 100%;
+    transition: right var(--duration) linear calc(var(--duration) * 2),
+      height var(--duration) linear calc(var(--duration) * 3);
+  }
+}
+
+.mobileMenu {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .expandedList {
+    display: none;
+  }
+
+  .hamburgerMenu {
+    position: absolute;
+    top: 9px;
+    right: 15px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 50px;
+    height: 50px;
+    margin: auto 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: right 0.8s ease-in-out;
+
+    &.active {
+      right: 265px;
+    }
+
+    div {
+      $width: 80%;
+      $height: 8px;
+      width: $width;
+      height: $height;
+      background-color: #000;
+    }
+  }
+
+  .mobileMenuWrapper {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    overflow: hidden;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+
+    * {
+      pointer-events: auto;
+    }
+  }
+
+  .mobileMenu {
+    position: absolute;
+    top: 0;
+    right: -450px;
+    z-index: 3;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    max-width: 450px;
+    width: 250px;
+    height: 100vh;
+    background-color: var(--overlay-bg);
+    color: var(--main-font-color);
+    transition: right 0.8s ease-in-out;
+
+    &.visible {
+      right: 0;
+    }
+
+    a {
+      width: 100%;
+      font-size: calc(var(--main-text-size) * 1.5);
+    }
+  }
+}
