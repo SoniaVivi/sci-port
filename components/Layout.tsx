@@ -6,6 +6,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
     <>
       <Navbar></Navbar>
       <div className="scanlines"></div>
+      <div id="modal-container"></div>
       {children}
     </>
   );

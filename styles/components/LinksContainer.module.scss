@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  max-width: 90%;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: auto;
+  padding-top: 15px;
+
+  a {
+    width: fit-content;
+    color: #fff;
+    padding: 15px 25px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+
+    svg {
+      transform: scale(2);
+    }
+  }
+}

@@ -1,15 +1,72 @@
-.heading {
-  font-family: "Orbitron Bold";
-}
-
-.para {
-  font-family: "Titillium Bold";
-}
-
 .container {
-  height: 200px;
-  max-width: calc(100% - 25px);
-  width: 960px;
-  margin: 25px auto;
-  border: 1px solid var(--secondary-color);
+  align-items: center;
+  gap: 25px;
+}
+
+.heading {
+  text-align: center;
+}
+
+h2.heading {
+  margin-top: -20px;
+  font-size: var(--main-text-size);
+}
+
+h1.heading::after {
+  animation-timing-function: steps(5, end);
+  animation-duration: 0.4s;
+}
+
+h2.heading::after {
+  animation-timing-function: steps(52, end);
+  animation-duration: 3s;
+  animation-delay: 0.4s;
+}
+
+@keyframes typewriter {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0;
+  }
+}
+
+.typewriter {
+  position: relative;
+  width: fit-content;
+
+  &::after {
+    position: absolute;
+    top: -5px;
+    right: -1px;
+    display: block;
+    content: "";
+    width: calc(100% + 1px);
+    height: 200%;
+    overflow: hidden;
+    white-space: nowrap;
+    animation-name: typewriter;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    background-color: var(--body-bg);
+  }
+}
+
+@media (max-width: 580px) {
+  h2.heading {
+    font-size: calc(var(--main-text-size) * 0.8);
+  }
+}
+
+@media (max-width: 480px) {
+  h2.heading {
+    font-size: calc(var(--main-text-size) * 0.7);
+  }
+}
+
+@media (max-width: 400px) {
+  h2.heading {
+    font-size: calc(var(--main-text-size) * 0.6);
+  }
 }

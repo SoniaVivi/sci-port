@@ -1,42 +1,59 @@
+import fromCamelCase from "@/helpers/fromCamelCase";
 import styles from "@/styles/components/Navbar.module.scss";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
-const Navbar = () => {
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const [showMobileMenu, setShowMobileMenu] = useState(false);
-  useEffect(() => {
-    window.addEventListener(
-      "scroll",
-      () => {
-        setScrollPosition(window.pageYOffset);
-      },
-      { passive: true }
-    );
-  }, []);
+const NavLinks = () => {
+  const navData = {
+    home: "/",
+    portfolio: "/portfolio",
+    github: "https://github.com/SoniaVivi",
+    about: "/about",
+    contact: "/contact",
+  };
 
   return (
     <>
-      <nav
-        className={`container-full ${styles.navbar} ${
-          scrollPosition > 0 ? styles.scrolled : ""
-        }`}
-      >
+      {Object.entries(navData).map(([linkName, link]) => {
+        if (link[0] != "/") {
+          return (
+            <li key={link}>
+              <button
+                className={`clickable ${styles.navLink}`}
+                onClick={() =>
+                  link ? window.open(link, "_blank,noreferer") : null
+                }
+              >
+                <a target="_blank" rel="noreferrer">
+                  {fromCamelCase(linkName)}
+                </a>
+              </button>
+            </li>
+          );
+        } else {
+          return (
+            <li key={link}>
+              <button
+                className={`clickable ${styles.navLink}`}
+                onClick={() => (link ? window.open(link, "_self") : null)}
+              >
+                <a>{fromCamelCase(linkName)}</a>
+              </button>
+            </li>
+          );
+        }
+      })}
+    </>
+  );
+};
+
+const Navbar = () => {
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
+
+  return (
+    <>
+      <nav className={`container-full ${styles.navbar}`}>
         <ul className={styles.expandedList}>
-          <li className={`clickable ${styles.navLink}`}>
-            <a>Lorem</a>
-          </li>
-          <li className={`clickable ${styles.navLink}`}>
-            <a>sit amet</a>
-          </li>
-          <li className={`clickable ${styles.navLink}`}>
-            <a>His id magna</a>
-          </li>
-          <li className={`clickable ${styles.navLink}`}>
-            <a>us doctus omittam e</a>
-          </li>
-          <li className={`clickable ${styles.navLink}`}>
-            <a>Melius perpetua has in</a>
-          </li>
+          <NavLinks />
         </ul>
         <button
           className={`${styles.hamburgerMenu} ${
@@ -55,21 +72,7 @@ const Navbar = () => {
             showMobileMenu ? styles.visible : ""
           }`}
         >
-          <li className={`clickable ${styles.navLink}`}>
-            <a>Lorem</a>
-          </li>
-          <li className={`clickable ${styles.navLink}`}>
-            <a>sit amet</a>
-          </li>
-          <li className={`clickable ${styles.navLink}`}>
-            <a>His id magna</a>
-          </li>
-          <li className={`clickable ${styles.navLink}`}>
-            <a>us doctus omittam e</a>
-          </li>
-          <li className={`clickable ${styles.navLink}`}>
-            <a>Melius perpetua has in</a>
-          </li>
+          <NavLinks />
         </ul>
       </div>
     </>

@@ -1,0 +1,11 @@
+.container {
+  justify-content: center;
+  margin-bottom: -50px;
+}
+
+.bannerImage {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(45%);
+}

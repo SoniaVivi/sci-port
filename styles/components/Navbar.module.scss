@@ -1,19 +1,13 @@
 .navbar {
   align-self: flex-start;
   position: sticky;
-  z-index: 2;
+  z-index: 15;
   top: 0;
   display: flex;
   justify-content: center;
   height: var(--navbar-height);
   font-size: var(--navbar-text-size);
   background-color: var(--nav-bg);
-  transition: height 0.3s ease-in, box-shadow 0.3s ease-out;
-
-  &.scrolled {
-    height: 75px;
-    box-shadow: 0 5px 3px rgba(0, 0, 0, 0.05);
-  }
 }
 
 .expandedList {
@@ -25,12 +19,29 @@
 }
 
 .navLink {
+  transition: background-color 0.1s ease-in;
+  background-color: unset;
+
+  &:active,
+  &:focus {
+    background-color: var(--foreground-bg);
+  }
+}
+
+.navLink {
   --duration: 0.2s;
   overflow: hidden;
   position: relative;
-  margin-right: 15px;
   padding: 10px;
+  border-radius: 10px;
   border: 3px solid transparent;
+  font-size: var(--navbar-text-size);
+  font-family: "Orbitron Bold";
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--main-font-color);
+
+  // Trace border when mouse is hovering
 
   &::before,
   &::after {
@@ -117,10 +128,11 @@
 
   .mobileMenuWrapper {
     position: fixed;
-    z-index: 2;
+    z-index: 16;
     top: 0;
     overflow: hidden;
     pointer-events: none;
+    max-width: 100%;
     width: 100%;
     height: 100%;
 
@@ -132,12 +144,12 @@
   .mobileMenu {
     position: absolute;
     top: 0;
-    right: -450px;
-    z-index: 3;
+    right: -250px;
+    z-index: 17;
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    max-width: 450px;
+    max-width: 250px;
     width: 250px;
     height: 100vh;
     background-color: var(--overlay-bg);
@@ -146,6 +158,16 @@
 
     &.visible {
       right: 0;
+    }
+
+    li {
+      width: 100%;
+      text-align: center;
+    }
+
+    .navLink {
+      width: 100%;
+      border-radius: 0;
     }
 
     a {
