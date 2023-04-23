@@ -11,7 +11,7 @@ const ContactForm = () => {
   }
 
   return (
-    <form className={styles.contactForm} onSubmit={handleSubmit}>
+    <form className={styles.contactForm} onSubmit={handleSubmit} method="POST">
       <label htmlFor="email">Your Email Address</label>
       <input
         id="email"
