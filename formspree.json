@@ -1,0 +1,8 @@
+{
+  "forms": {
+    "signupForm": {
+      "name": "Contact Form",
+      "actions": [{ "type": "email", "to": "svivn@proton.me" }]
+    }
+  }
+}

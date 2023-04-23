@@ -19,11 +19,6 @@
 }
 
 @font-face {
-  font-family: "Inter Bold";
-  src: url("./fonts/Inter-Bold.otf");
-}
-
-@font-face {
   font-family: "Orbitron";
   src: url("./fonts/orbitron-medium.otf");
 }
@@ -138,6 +133,14 @@ strong {
   max-width: 100%;
   width: 540px;
   margin: 0 auto;
+}
+
+.container-md {
+  display: flex;
+  max-width: 100%;
+  width: 720px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .container-lg {
