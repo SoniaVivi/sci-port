@@ -86,7 +86,10 @@ const FeaturedShowcase = () => {
       <FeaturedContainer
         imageLink={rommTea}
         alt="Screenshot of Romm Tea, a webapp to keep track of tea infusions"
-        links={{ github: "https://github.com/SoniaVivi/romm-tea" }}
+        links={{
+          github: "https://github.com/SoniaVivi/romm-tea",
+          liveView: "https://rommtea.onrender.com/",
+        }}
       >
         <RommTeaText />
       </FeaturedContainer>
