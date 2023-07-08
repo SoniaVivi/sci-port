@@ -5,7 +5,7 @@ import { useState } from "react";
 const NavLinks = () => {
   const navData = {
     home: "/",
-    portfolio: "/portfolio",
+    gallery: "/gallery",
     github: "https://github.com/SoniaVivi",
     about: "/about",
     contact: "/contact",

@@ -3,7 +3,8 @@ import Image, { StaticImageData } from "next/image";
 import mikoImage from "@/public/projects/mikoReader.png";
 import vividImage from "@/public/projects/vividImageOrganizer.png";
 import svivnImage from "@/public/projects/svivn.png";
-import rommTea from "@/public/projects/rommTea.png";
+import koiKoiImage from "@/public/projects/koiKoi.png";
+import rommTeaImage from "@/public/projects/rommTea.png";
 import { ReactNode, useRef, useState } from "react";
 import useObserver from "../hooks/useObserver";
 import Modal from "../Modal";
@@ -12,6 +13,7 @@ import MikoReaderText from "@/text/featured/mikoReader.mdx";
 import RommTeaText from "@/text/featured/rommTea.mdx";
 import VividText from "@/text/featured/vivid.mdx";
 import SvivnText from "@/text/featured/svivn.mdx";
+import KoiKoiText from "@/text/featured/koiKoi.mdx";
 import LinksContainer from "../LinksContainer";
 
 const FeaturedContainer = ({
@@ -45,7 +47,13 @@ const FeaturedContainer = ({
         className={`image-wrapper ${styles.imageWrapper}`}
         onClick={() => setShowModal(true)}
       >
-        <Image width="300" height="260" src={imageLink} alt={alt} />
+        <Image
+          width="300"
+          height="260"
+          src={imageLink}
+          alt={alt}
+          placeholder="blur"
+        />
         {showModal
           ? createPortal(
               <Modal onClose={() => setShowModal(false)}>
@@ -71,20 +79,22 @@ const FeaturedShowcase = () => {
         alt="Screenshot of Miko Reader, a manga reading webapp"
         links={{
           github: "https://github.com/SoniaVivi/miko-reader",
-          liveView: "https://miko-reader.herokuapp.com/",
         }}
       >
         <MikoReaderText />
       </FeaturedContainer>
       <FeaturedContainer
-        imageLink={vividImage}
-        alt="Screenshot of Vivid Image Organizer"
-        links={{ github: "https://github.com/SoniaVivi/Image-Organizer" }}
+        imageLink={koiKoiImage}
+        alt="Screenshot of Koi Koi, a recreation of the tradional japanese card game"
+        links={{
+          github: "https://github.com/SoniaVivi/koi-koi",
+          liveview: "https://koikoisvivn.onrender.com/",
+        }}
       >
-        <VividText />
+        <KoiKoiText />
       </FeaturedContainer>
       <FeaturedContainer
-        imageLink={rommTea}
+        imageLink={rommTeaImage}
         alt="Screenshot of Romm Tea, a webapp to keep track of tea infusions"
         links={{
           github: "https://github.com/SoniaVivi/romm-tea",
@@ -92,6 +102,13 @@ const FeaturedShowcase = () => {
         }}
       >
         <RommTeaText />
+      </FeaturedContainer>
+      <FeaturedContainer
+        imageLink={vividImage}
+        alt="Screenshot of Vivid Image Organizer"
+        links={{ github: "https://github.com/SoniaVivi/Image-Organizer" }}
+      >
+        <VividText />
       </FeaturedContainer>
       <FeaturedContainer
         imageLink={svivnImage}

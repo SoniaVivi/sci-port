@@ -60,7 +60,13 @@ const Project = ({
         }`}
         onClick={() => setShowModal(true)}
       >
-        <Image width="480" height="300" src={imageLink} alt={alt}></Image>
+        <Image
+          width="480"
+          height="300"
+          src={imageLink}
+          alt={alt}
+          placeholder="blur"
+        ></Image>
         {showModal
           ? createPortal(
               <Modal onClose={() => setShowModal(false)}>
@@ -81,7 +87,7 @@ const Project = ({
 export default function Portfolio() {
   return (
     <>
-      <h1>Portfolio</h1>
+      <h1>Project Gallery</h1>
       <div className="container-lg column">
         <div className="divider"></div>
       </div>
@@ -176,7 +182,6 @@ export default function Portfolio() {
           alt="My original portfolio website"
           links={{
             github: "https://github.com/SoniaVivi/portfolio-site",
-            liveView: "https://svivnportfolio.herokuapp.com/",
           }}
         >
           <OriginalPortfolioText />
