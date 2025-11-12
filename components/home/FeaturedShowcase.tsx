@@ -88,7 +88,7 @@ const FeaturedShowcase = () => {
         alt="Screenshot of Koi Koi, a recreation of the tradional japanese card game"
         links={{
           github: "https://github.com/SoniaVivi/koi-koi",
-          liveview: "https://koikoisvivn.onrender.com/",
+          liveView: "https://koikoisvivn.onrender.com/",
         }}
       >
         <KoiKoiText />
@@ -98,7 +98,6 @@ const FeaturedShowcase = () => {
         alt="Screenshot of Romm Tea, a webapp to keep track of tea infusions"
         links={{
           github: "https://github.com/SoniaVivi/romm-tea",
-          liveView: "https://rommtea.onrender.com/",
         }}
       >
         <RommTeaText />
