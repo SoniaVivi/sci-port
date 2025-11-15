@@ -17,6 +17,10 @@
 .imageWrapper {
   width: fit-content;
   height: fit-content;
+
+  img {
+    object-fit: contain;
+  }
 }
 
 .body {
