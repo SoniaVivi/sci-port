@@ -12,6 +12,15 @@ h2.heading::after {
 .mainContent {
   align-items: center;
   gap: 10px;
+
+  > article {
+    margin-bottom: 25px;
+  }
+}
+
+.iconContainer {
+  gap: 50px;
+  margin: 20px 0;
 }
 
 @keyframes typewriter {
