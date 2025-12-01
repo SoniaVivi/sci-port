@@ -6,9 +6,9 @@ const NavLinks = () => {
   const navData = {
     home: "/",
     gallery: "/gallery",
-    github: "https://github.com/SoniaVivi",
-    about: "/about",
-    contact: "/contact",
+    // github: "https://github.com/SoniaVivi",
+    // about: "/about",
+    // contact: "/contact",
   };
 
   return (
