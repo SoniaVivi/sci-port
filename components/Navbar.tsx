@@ -4,10 +4,10 @@ import { useState } from "react";
 
 const NavLinks = () => {
   const navData = {
-    home: "/",
-    gallery: "/gallery",
-    // github: "https://github.com/SoniaVivi",
-    // about: "/about",
+    featured: "/",
+    github: "https://github.com/SoniaVivi",
+    about: "/about",
+    other: "/other",
     // contact: "/contact",
   };
 

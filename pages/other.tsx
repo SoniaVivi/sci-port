@@ -29,9 +29,6 @@ import BattleshipText from "@/text/portfolio/battleship.mdx";
 import snakeImage from "@/public/projects/snake.png";
 import SnakeText from "@/text/portfolio/snake.mdx";
 import LinksContainer from "@/components/LinksContainer";
-// Other Websites
-import originalPortfolioImage from "@/public/projects/originalPortfolio.png";
-import OriginalPortfolioText from "@/text/portfolio/originalPortfolio.mdx";
 
 const Project = ({
   imageLink,
@@ -87,7 +84,7 @@ const Project = ({
 export default function Portfolio() {
   return (
     <>
-      <h1>Project Gallery</h1>
+      <h1>Other Projects</h1>
       <div className="container-lg column">
         <div className="divider"></div>
       </div>
@@ -173,18 +170,6 @@ export default function Portfolio() {
           links={{ github: "https://github.com/SoniaVivi/battleship" }}
         >
           <BattleshipText />
-        </Project>
-      </div>
-      <h2>Other Websites</h2>
-      <div className={`container-lg column ${styles.container}`}>
-        <Project
-          imageLink={originalPortfolioImage}
-          alt="My original portfolio website"
-          links={{
-            github: "https://github.com/SoniaVivi/portfolio-site",
-          }}
-        >
-          <OriginalPortfolioText />
         </Project>
       </div>
     </>
