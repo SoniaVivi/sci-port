@@ -67,6 +67,18 @@
 
 .textBody {
   color: var(--primary-color);
+
+  > h1 {
+    min-height: 10px;
+  }
+
+  li {
+    list-style: disc outside none;
+
+    p:last-child {
+      font-size: calc(var(--main-text-size) * 0.8);
+    }
+  }
 }
 
 @media (max-width: 780px) {

@@ -1,6 +1,5 @@
 import styles from "@/styles/About.module.scss";
 import Image from "next/image";
-import portrait from "@/public/about/portfolioPortrait.png";
 import PortraitText from "@/text/about/siona.mdx";
 import LinksContainer from "@/components/LinksContainer";
 
@@ -14,9 +13,6 @@ export default function About() {
       <div
         className={`container-lg cutoff-corners notched-left ${styles.portraitContainer}`}
       >
-        {/* <div className={styles.portraitWrapper}>
-          <Image width="320" src={portrait} alt="Siona Vivian" />
-        </div> */}
         <div className={styles.textBody}>
           <PortraitText />
           <LinksContainer
